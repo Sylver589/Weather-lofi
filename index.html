@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lo-fi Weather Radio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="bgVideo" autoplay muted loop playsinline></video>
+  <img id="bgImage" alt="weather background" />
+  <div class="overlay"></div>
+
+  <header class="topbar">
+    <h1>Lo-fi Weather Radio</h1>
+
+    <div class="city-search">
+      <input id="cityInput" type="text" value="Toronto" />
+      <button id="cityBtn">Search</button>
+    </div>
+
+    <div class="topbar-controls">
+      <div class="unit-toggle">
+        <button id="celsiusBtn" class="unit-btn active">°C</button>
+        <button id="fahrenheitBtn" class="unit-btn">°F</button>
+      </div>
+
+      <div class="theme-control">
+        <label for="themeSelect">Theme</label>
+        <select id="themeSelect">
+          <option value="auto">Automatic</option>
+          <option value="clear">Clear</option>
+          <option value="night">Night</option>
+          <option value="clouds">Cloudy</option>
+          <option value="fog">Fog</option>
+          <option value="rain">Rain</option>
+          <option value="snow">Snow</option>
+          <option value="storm">Storm</option>
+          <option value="wind">Wind</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="weather-card">
+      <p id="timeText" class="time-text">--:--</p>
+      <p id="location" class="location">Toronto</p>
+      <p id="description" class="description">Loading weather...</p>
+
+      <div class="main-temp">
+        <span id="temp">--</span><span id="unitSymbol">°C</span>
+      </div>
+
+      <div class="details-grid">
+        <div>
+          <span>Feels Like</span>
+          <strong id="feelsLike">--°C</strong>
+        </div>
+
+        <div>
+          <span>Humidity</span>
+          <strong id="humidity">--%</strong>
+        </div>
+
+        <div>
+          <span>Wind</span>
+          <strong id="wind">-- m/s</strong>
+        </div>
+
+        <div>
+          <span>Condition</span>
+          <strong id="condition">--</strong>
+        </div>
+      </div>
+
+      <p id="musicLabel" class="music-label">Night Lo-fi</p>
+
+      <div class="music-controls">
+        <div class="music-main-controls">
+          <button id="prevSongBtn">⏮</button>
+          <button id="musicToggle">⏸</button>
+          <button id="nextSongBtn">⏭</button>
+        </div>
+
+        <button id="shuffleSongBtn">Shuffle</button>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="forecast-header">
+        <button id="forecastPrev" class="forecast-arrow">‹</button>
+        <h2>Forecast</h2>
+        <button id="forecastNext" class="forecast-arrow">›</button>
+      </div>
+
+      <div id="forecastTrack" class="forecast-track"></div>
+    </section>
+  </main>
+
+  <audio id="musicPlayer" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

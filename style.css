@@ -1,0 +1,380 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --glass-bg: rgba(15, 23, 42, 0.34);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --theme-tint: rgba(120, 90, 180, 0.22);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+  background: #020617;
+}
+
+#bgVideo,
+#bgImage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.7s ease;
+  z-index: -3;
+}
+
+#bgImage {
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(2, 6, 23, 0.2), rgba(2, 6, 23, 0.72)),
+    var(--theme-tint);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.topbar {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  min-height: 68px;
+  padding: 12px 18px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.34);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.topbar h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.city-search {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.city-search input,
+.theme-control select,
+.city-search button,
+.unit-btn {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 11px 14px;
+  backdrop-filter: blur(14px);
+  font-size: 0.95rem;
+}
+
+.city-search input {
+  width: 220px;
+}
+
+.city-search input:focus,
+.theme-control select:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.theme-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-control label {
+  color: var(--muted);
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 6px;
+}
+
+.unit-btn {
+  cursor: pointer;
+  opacity: 0.45;
+  padding: 10px 13px;
+}
+
+.unit-btn.active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+select option {
+  color: #f8fafc;
+  background-color: #1e293b;
+}
+
+button {
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.city-search button:hover,
+.theme-control select:hover,
+.unit-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  opacity: 1;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 115px 20px 50px;
+  display: grid;
+  place-items: center;
+  gap: 34px;
+}
+
+.weather-card {
+  width: min(92vw, 560px);
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px) saturate(145%);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 34px 30px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.time-text {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.location {
+  color: var(--muted);
+  margin: 0;
+}
+
+.description {
+  font-size: 1.45rem;
+  margin: 18px 0 12px;
+  text-transform: capitalize;
+}
+
+.main-temp {
+  font-size: clamp(4.8rem, 16vw, 8.4rem);
+  font-weight: 800;
+  line-height: 1;
+  margin: 30px 0 34px;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+}
+
+.details-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  text-align: left;
+}
+
+.details-grid div {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.details-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.music-label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 26px 0 10px;
+}
+
+.music-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.music-main-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.music-controls button {
+  background: transparent;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 1.25rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.music-controls button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+#shuffleSongBtn {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.forecast-section {
+  width: min(92vw, 760px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.forecast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.forecast-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.forecast-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.34);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+
+.forecast-arrow:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.forecast-track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 6px 20px;
+  scrollbar-width: none;
+}
+
+.forecast-track::-webkit-scrollbar {
+  display: none;
+}
+
+.forecast-card {
+  min-width: 170px;
+  min-height: 230px;
+  text-align: center;
+  scroll-snap-align: center;
+  background: rgba(15, 23, 42, 0.34);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 22px 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.forecast-card p {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.forecast-card img {
+  width: 78px;
+  height: 78px;
+  margin: 22px 0 12px;
+}
+
+.forecast-card strong {
+  display: block;
+  font-size: 1.35rem;
+  margin-top: 8px;
+}
+
+.forecast-card span {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .topbar-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .theme-control {
+    justify-content: center;
+  }
+
+  .city-search {
+    width: 100%;
+  }
+
+  .city-search input {
+    width: 100%;
+  }
+
+  .app {
+    padding-top: 240px;
+  }
+
+  .weather-card {
+    padding: 24px 22px;
+  }
+
+  .main-temp {
+    margin: 26px 0 30px;
+  }
+
+  .forecast-card {
+    min-width: 155px;
+  }
+}
