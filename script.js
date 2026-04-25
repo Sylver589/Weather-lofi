@@ -43,13 +43,13 @@ let themeLibrary = {
       {
         type: "video",
         src: "images/Sunny.mp4",
-        music: "Music/Lofi-Sunny.mp3",
+        music: "music/Lofi-Sunny.mp3",
         label: "Sunny Lo-fi"
       },
       {
         type: "video",
         src: "images/Sunny.mkv",
-        music: "Music/Lofi-Sunny2.mp3",
+        music: "music/Lofi-Sunny2.mp3",
         label: "Sunny Lo-fi 2"
       }
     ]
@@ -61,13 +61,13 @@ let themeLibrary = {
       {
         type: "image",
         src: "images/Clear_Night.gif",
-        music: "Music/Lofi-Night.mp3",
+        music: "music/Lofi-Night.mp3",
         label: "Night Lo-fi"
       },
       {
         type: "video",
         src: "images/Clear-night.mp4",
-        music: "Music/Lofi-Night2.mp3",
+        music: "music/Lofi-Night2.mp3",
         label: "Night Lo-fi 2"
       }
     ]
@@ -79,13 +79,13 @@ let themeLibrary = {
       {
         type: "video",
         src: "images/Cloudy.mp4",
-        music: "Music/Lofi-Cloudy.mp3",
+        music: "music/Lofi-Cloudy.mp3",
         label: "Cloudy Lo-fi"
       },
       {
         type: "image",
         src: "images/Cloudy2.gif",
-        music: "Music/Lofi-Cloudy2.mp3",
+        music: "music/Lofi-Cloudy2.mp3",
         label: "Cloudy Lo-fi 2"
       }
     ]
@@ -97,13 +97,13 @@ let themeLibrary = {
       {
         type: "video",
         src: "images/Fog.mp4",
-        music: "Music/Lofi-Fog.mp3",
+        music: "music/Lofi-Fog.mp3",
         label: "Fog Lo-fi"
       },
       {
         type: "video",
         src: "images/Fog2.mp4",
-        music: "Music/Lofi-Fog2.mp3",
+        music: "music/Lofi-Fog2.mp3",
         label: "Fog Lo-fi 2"
       }
     ]
@@ -115,19 +115,19 @@ let themeLibrary = {
       {
         type: "image",
         src: "images/rain.gif",
-        music: "Music/Lofi-rain.mp3",
+        music: "music/Lofi-rain.mp3",
         label: "Rain Lo-fi"
       },
       {
         type: "image",
         src: "images/rain2.gif",
-        music: "Music/Lofi-rain2.mp3",
+        music: "music/Lofi-rain2.mp3",
         label: "Rain Lo-fi 2"
       },
       {
         type: "image",
         src: "images/rain3.gif",
-        music: "Music/Lofi-Rain3.mp3",
+        music: "music/Lofi-Rain3.mp3",
         label: "Rain Lo-fi 3"
       }
     ]
@@ -139,13 +139,13 @@ let themeLibrary = {
       {
         type: "image",
         src: "images/snow.gif",
-        music: "Music/Lofi-Snow.mp3",
+        music: "music/Lofi-Snow.mp3",
         label: "Snow Lo-fi"
       },
       {
         type: "image",
         src: "images/Snow2.gif",
-        music: "Music/Lofi-Snow2.mp3",
+        music: "music/Lofi-Snow2.mp3",
         label: "Snow Lo-fi 2"
       }
     ]
@@ -157,13 +157,13 @@ let themeLibrary = {
       {
         type: "image",
         src: "images/Storm.gif",
-        music: "Music/Lofi-Storm.mp3",
+        music: "music/Lofi-Storm.mp3",
         label: "Storm Lo-fi"
       },
       {
         type: "video",
         src: "images/Storm.mp4",
-        music: "Music/Lofi-Storm2.mp3",
+        music: "music/Lofi-Storm2.mp3",
         label: "Storm Lo-fi 2"
       }
     ]
@@ -175,13 +175,13 @@ let themeLibrary = {
       {
         type: "image",
         src: "images/Wind.gif",
-        music: "Music/Lofi-Wind.mp3",
+        music: "music/Lofi-Wind.mp3",
         label: "Wind Lo-fi"
       },
       {
         type: "video",
         src: "images/Windy2.mp4",
-        music: "Music/Lofi-Wind2.mp3",
+        music: "music/Lofi-Wind2.mp3",
         label: "Wind Lo-fi 2"
       }
     ]
